@@ -1,4 +1,6 @@
 FieldTripServer::Application.routes.draw do
+  resources :field_trips
+
   resources :schools
 
   mount FieldTripServer::API => "/api"

@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120605175416) do
+ActiveRecord::Schema.define(:version => 20120620181929) do
+
+  create_table "field_trips", :force => true do |t|
+    t.string   "name"
+    t.integer  "school_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "field_trips", ["school_id"], :name => "index_field_trips_on_school_id"
 
   create_table "schools", :force => true do |t|
     t.string   "board"

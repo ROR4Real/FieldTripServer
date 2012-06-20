@@ -34,4 +34,6 @@ FieldTripServer::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  config.watchable_files = ["lib/field_trip_server/api.rb"]
 end
