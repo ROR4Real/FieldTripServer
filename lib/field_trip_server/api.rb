@@ -1,5 +1,5 @@
 class FieldTripServer::API < Grape::API
-  version 'v1', :using => :header, :vendor => 'field_trip'
+  version 'v1', :using => :header
 
   helpers do
     def current_user
