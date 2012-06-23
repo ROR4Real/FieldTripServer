@@ -12,6 +12,18 @@ require 'csv'
 # This is where you parse your CSV file, and stuff it into the database. You've already created the
 # migration for your model, and run it, right?
 #
+
+module ActiveModel
+  module MassAssignmentSecurity
+    class Sanitizer
+      def sanitize(attributes, authorizer)
+        attributes
+      end
+    end
+  end
+end
+
+
 file = "#{Rails.root}/db/CALGIS.SCHOOL_LOCATION.csv"
 CSV.foreach(file, :headers => true) do |row|
   School.create(
