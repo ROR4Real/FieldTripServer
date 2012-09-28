@@ -3,6 +3,6 @@ class FieldTrip < ActiveRecord::Base
   attr_accessible :name, :school_id
 
   def school_name
-    school.name
+    school.name unless school.nil?
   end
 end
