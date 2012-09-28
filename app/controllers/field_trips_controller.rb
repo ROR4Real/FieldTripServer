@@ -43,6 +43,8 @@ class FieldTripsController < ApplicationController
   # POST /field_trips.json
   def create
     @field_trip = FieldTrip.new(params[:field_trip])
+    @schools = School.order(:name).all
+    
 
     respond_to do |format|
       if @field_trip.save
@@ -59,6 +61,8 @@ class FieldTripsController < ApplicationController
   # PUT /field_trips/1.json
   def update
     @field_trip = FieldTrip.find(params[:id])
+    @schools = School.order(:name).all
+    
 
     respond_to do |format|
       if @field_trip.update_attributes(params[:field_trip])
