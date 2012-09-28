@@ -25,6 +25,7 @@ class FieldTripsController < ApplicationController
   # GET /field_trips/new.json
   def new
     @field_trip = FieldTrip.new
+    @schools = School.order(:name).all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class FieldTripsController < ApplicationController
   # GET /field_trips/1/edit
   def edit
     @field_trip = FieldTrip.find(params[:id])
+    @schools = School.order(:name).all
   end
 
   # POST /field_trips
