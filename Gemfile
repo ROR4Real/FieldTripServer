@@ -16,6 +16,7 @@ gem 'heroku'
 group :assets do
   gem 'less-rails'
   gem 'less-rails-bootstrap'
+  gem 'less-rails-bootswatch'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer'
