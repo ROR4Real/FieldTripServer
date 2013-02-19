@@ -13,6 +13,8 @@ class FieldTripServer::API < Grape::API
     end
   end
   
+  # To test: curl  -u course:password -d "school=Penbrooke Meadows Elementary&name=test" localhost:3000/api/field_trips/create.json
+  
   resource :field_trips do
     
     http_basic do |user, password|
