@@ -25,8 +25,7 @@ class FieldTripServer::API < Grape::API
     post :create do
       puts "=== CREATE #{params.inspect}"
       school = School.where(:name => params[:school]).first
-      school.field_trips.create(:name => params[:name]) unless school.nil?
-      school.field_trips.last
+      school.field_trips.create!(:name => params[:name]) unless school.nil?
     end
   end
   
