@@ -35,7 +35,7 @@ CSV.foreach(file, :headers => true) do |row|
     :city => row[5],
     :province => row[6],
     :postal_code => row[7],
-    :grade_range => row[8],
-    :has_ecs => row[9] == 'Y'
+    :grades => row[8],
+    :ecs => row[9] == 'Y'
   )
 end    

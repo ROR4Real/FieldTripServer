@@ -1,55 +1,54 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Board:</b>
+  <strong>Board:</strong>
   <%= @school.board %>
 </p>
 
 <p>
-  <b>Category:</b>
+  <strong>Category:</strong>
   <%= @school.category %>
 </p>
 
 <p>
-  <b>School type:</b>
+  <strong>School type:</strong>
   <%= @school.school_type %>
 </p>
 
 <p>
-  <b>Name:</b>
+  <strong>Name:</strong>
   <%= @school.name %>
 </p>
 
 <p>
-  <b>Address:</b>
+  <strong>Address:</strong>
   <%= @school.address %>
 </p>
 
 <p>
-  <b>City:</b>
+  <strong>City:</strong>
   <%= @school.city %>
 </p>
 
 <p>
-  <b>Province:</b>
+  <strong>Province:</strong>
   <%= @school.province %>
 </p>
 
 <p>
-  <b>Postal code:</b>
+  <strong>Postal code:</strong>
   <%= @school.postal_code %>
 </p>
 
 <p>
-  <b>Grade range:</b>
-  <%= @school.grade_range %>
+  <strong>Grades:</strong>
+  <%= @school.grades %>
 </p>
 
 <p>
-  <b>Has ecs:</b>
-  <%= @school.has_ecs %>
+  <strong>Ecs:</strong>
+  <%= @school.ecs %>
 </p>
-
 
 <%= link_to 'Edit', edit_school_path(@school) %> |
 <%= link_to 'Back', schools_path %>

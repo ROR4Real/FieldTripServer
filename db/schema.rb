@@ -9,20 +9,14 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120620181929) do
+ActiveRecord::Schema.define(version: 20131017205717) do
 
-  create_table "field_trips", :force => true do |t|
-    t.string   "name"
-    t.integer  "school_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
-  add_index "field_trips", ["school_id"], :name => "index_field_trips_on_school_id"
-
-  create_table "schools", :force => true do |t|
+  create_table "schools", force: true do |t|
     t.string   "board"
     t.string   "category"
     t.string   "school_type"
@@ -31,10 +25,10 @@ ActiveRecord::Schema.define(:version => 20120620181929) do
     t.string   "city"
     t.string   "province"
     t.string   "postal_code"
-    t.string   "grade_range"
-    t.boolean  "has_ecs",     :default => false
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.string   "grades"
+    t.boolean  "ecs"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

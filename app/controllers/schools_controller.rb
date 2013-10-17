@@ -1,69 +1,51 @@
 class SchoolsController < ApplicationController
+  before_action :set_school, only: [:show, :edit, :update, :destroy]
+
   # GET /schools
   # GET /schools.json
   def index
-    @schools = School.paginate(:page => params[:page], :per_page => 10).order(:name)
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @schools }
-    end
+    @schools = School.all
   end
 
   # GET /schools/1
   # GET /schools/1.json
   def show
-    @school = School.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @school }
-    end
   end
 
   # GET /schools/new
-  # GET /schools/new.json
   def new
     @school = School.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @school }
-    end
   end
 
   # GET /schools/1/edit
   def edit
-    @school = School.find(params[:id])
   end
 
   # POST /schools
   # POST /schools.json
   def create
-    @school = School.new(params[:school])
+    @school = School.new(school_params)
 
     respond_to do |format|
       if @school.save
         format.html { redirect_to @school, notice: 'School was successfully created.' }
-        format.json { render json: @school, status: :created, location: @school }
+        format.json { render action: 'show', status: :created, location: @school }
       else
-        format.html { render action: "new" }
+        format.html { render action: 'new' }
         format.json { render json: @school.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PUT /schools/1
-  # PUT /schools/1.json
+  # PATCH/PUT /schools/1
+  # PATCH/PUT /schools/1.json
   def update
-    @school = School.find(params[:id])
-
     respond_to do |format|
-      if @school.update_attributes(params[:school])
+      if @school.update(school_params)
         format.html { redirect_to @school, notice: 'School was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit' }
         format.json { render json: @school.errors, status: :unprocessable_entity }
       end
     end
@@ -72,12 +54,21 @@ class SchoolsController < ApplicationController
   # DELETE /schools/1
   # DELETE /schools/1.json
   def destroy
-    @school = School.find(params[:id])
     @school.destroy
-
     respond_to do |format|
       format.html { redirect_to schools_url }
       format.json { head :no_content }
     end
   end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_school
+      @school = School.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def school_params
+      params.require(:school).permit(:board, :category, :school_type, :name, :address, :city, :province, :postal_code, :grades, :ecs)
+    end
 end

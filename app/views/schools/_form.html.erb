@@ -1,4 +1,4 @@
-<%= form_for(@school, html: {class: 'form-horizontal'}) do |f| %>
+<%= form_for(@school) do |f| %>
   <% if @school.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@school.errors.count, "error") %> prohibited this school from being saved:</h2>
@@ -11,71 +11,47 @@
     </div>
   <% end %>
 
-  <div class="control-group">
-    <%= f.label :board, class: "control-label" %>
-    <div class="controls">
-      <%= f.text_field :board %>
-    </div>
+  <div class="field">
+    <%= f.label :board %><br>
+    <%= f.text_field :board %>
   </div>
-  <div class="control-group">
-    <%= f.label :category, class: "control-label"  %>
-    <div class="controls">
-      <%= f.text_field :category %>
-    </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
   </div>
-  <div class="control-group">
-    <%= f.label :school_type, class: "control-label" %>
-    <div class="controls">
-      <%= f.text_field :school_type %>
-    </div>
+  <div class="field">
+    <%= f.label :school_type %><br>
+    <%= f.text_field :school_type %>
   </div>
-  <div class="control-group">
-    <%= f.label :name, class: "control-label" %>
-    <div class="controls">
-      <%= f.text_field :name %>
-    </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
   </div>
-  <div class="control-group">
-    <%= f.label :address, class: "control-label" %>
-    <div class="controls">
-      <%= f.text_field :address %>
-    </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
   </div>
-  <div class="control-group">
-    <%= f.label :city, class: "control-label" %>
-    <div class="controls">
-      <%= f.text_field :city %>
-    </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
   </div>
-  <div class="control-group">
-    <%= f.label :province, class: "control-label" %>
-    <div class="controls">
-      <%= f.text_field :province %>
-    </div>
+  <div class="field">
+    <%= f.label :province %><br>
+    <%= f.text_field :province %>
   </div>
-  <div class="control-group">
-    <%= f.label :postal_code, class: "control-label" %>
-    <div class="controls">
-      <%= f.text_field :postal_code %>
-    </div>
+  <div class="field">
+    <%= f.label :postal_code %><br>
+    <%= f.text_field :postal_code %>
   </div>
-  <div class="control-group">
-    <%= f.label :grade_range, class: "control-label" %>
-    <div class="controls">
-      <%= f.text_field :grade_range %>
-    </div>
+  <div class="field">
+    <%= f.label :grades %><br>
+    <%= f.text_field :grades %>
   </div>
-  <div class="control-group">
-    <%= f.label :has_ecs, class: "control-label" %>
-    <div class="controls">
-      <%= f.check_box :has_ecs %>
-    </div>
+  <div class="field">
+    <%= f.label :ecs %><br>
+    <%= f.check_box :ecs %>
   </div>
-  <div class="control-group">
-    <div class="controls">
-      <div class="actions">
-        <%= f.submit class: "btn btn-success" %>
-      </div>
-    </div>
+  <div class="actions">
+    <%= f.submit %>
   </div>
 <% end %>
