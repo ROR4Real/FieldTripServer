@@ -1,0 +1,45 @@
+<h1>Listing schools</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Board</th>
+      <th>Category</th>
+      <th>School type</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Province</th>
+      <th>Postal code</th>
+      <th>Grades</th>
+      <th>Ecs</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schools.each do |school| %>
+      <tr>
+        <td><%= school.board %></td>
+        <td><%= school.category %></td>
+        <td><%= school.school_type %></td>
+        <td><%= school.name %></td>
+        <td><%= school.address %></td>
+        <td><%= school.city %></td>
+        <td><%= school.province %></td>
+        <td><%= school.postal_code %></td>
+        <td><%= school.grades %></td>
+        <td><%= school.ecs %></td>
+        <td><%= link_to 'Show', school %></td>
+        <td><%= link_to 'Edit', edit_school_path(school) %></td>
+        <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New School', new_school_path %>
