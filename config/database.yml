@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: FieldTripServer_development
   pool: 5
-  username: tim
+  username: your_username
   password:
   host: localhost
 
@@ -49,7 +49,7 @@ test:
   encoding: unicode
   database: FieldTripServer_test
   pool: 5
-  username: tim
+  username: your_username
   password:
   host: localhost
 
@@ -58,6 +58,6 @@ production:
   encoding: unicode
   database: FieldTripServer_production
   pool: 5
-  username: tim
+  username: your_username
   password:
   host: localhost
