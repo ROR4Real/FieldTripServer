@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @field_trip.name %>
+</p>
+
+<p>
+  <strong>School:</strong>
+  <%= @field_trip.school %>
+</p>
+
+<%= link_to 'Edit', edit_field_trip_path(@field_trip) %> |
+<%= link_to 'Back', field_trips_path %>

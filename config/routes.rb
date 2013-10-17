@@ -1,4 +1,6 @@
 FieldTripServer::Application.routes.draw do
+  resources :field_trips
+
   resources :schools
 
   # The priority is based upon order of creation: first created -> highest priority.
