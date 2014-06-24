@@ -46,7 +46,7 @@ end
 i=0
 schools.each do | school | 
   if rand(6) < 3
-    num_students=rand(10)*30
+    num_students=rand(5)*20
     j=0
     while j < num_students
       fname=first[rand(first.length-1)]
